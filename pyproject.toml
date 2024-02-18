@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "restapp"
+version = "0.1.0"
+description = "Django Rest Framework APP"
+authors = ["Leyser Pinto <59316466+LeyserPinto@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^8.0.1"
+djangorestframework = "^3.14.0"
+factory-boy = "^3.3.0"
+django = "^5.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
