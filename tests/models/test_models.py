@@ -1,26 +1,27 @@
 import pytest
 
+from django.test import Client
+from product.models import Category, Products
 from order.factories import OrderFactory
 
+@pytest.mark.django_db
+def tests_model():
+    client = Client()
+    test_category = Category.objects.create(
+        title = 'Teste category 1',
+        slug = 'My category 1',
+        ative = True
+    )
 
-# @pytest.fixture
-# def category_creation():
-#     category = Category.objects.create(title = 'Pytest1', slug = 'Pytest1', description = 'teste')
-#     assert category.title == 'Pytest1'
-#     return category
+    product = Products.objects.create(
+        title = 'Product 1',
+        description = 'Teste product',
+        price = 5,
+        ative = True
+    )
 
-# @pytest.mark.django_pytest
-# def product_factory_creation():
-#     factoryCategory = category_creation()    
-#     instance_product_factory = ProductsFactory(category = factoryCategory)
+    expected_value_category = "Teste category 1"
+    expected_value_product  = "Product 1"  
 
-#     assert instance_product_factory.price > 0
-
-@pytest.fixture
-def order_factory():
-    return OrderFactory()
-
-@pytest.mark.django_pytest
-def django_test_order_factory(order_factory):
-    product = order_factory.product()
-    assert product.price > 1
+    assert str(test_category.title) == expected_value_category
+    assert str(product.title) == expected_value_product

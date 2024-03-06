@@ -1,1 +1,1 @@
-from .test_models import django_test_order_factory
+from .test_models import tests_model
