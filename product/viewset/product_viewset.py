@@ -1,9 +1,9 @@
-# from rest_framework import status
-# from rest_framework.mixins import CreateModelMixin
-# from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.mixins import CreateModelMixin
+from rest_framework.response import Response
 from rest_framework.viewsets import  ModelViewSet
 
-from models import Products
+from product.models import Products
 from product.serializers import ProductsSerializers
 
 class ProductViewSet(ModelViewSet):

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from models.category import Category
+from product.models import Category
 
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
@@ -9,5 +9,5 @@ class CategorySerializers(serializers.ModelSerializer):
             'title',
             'slug',
             'description',
-            'active',
+            'ative',
         ]
