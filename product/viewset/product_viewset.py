@@ -1,6 +1,4 @@
-from rest_framework import status
-from rest_framework.mixins import CreateModelMixin
-from rest_framework.response import Response
+
 from rest_framework.viewsets import  ModelViewSet
 
 from product.models import Products
@@ -8,6 +6,8 @@ from product.serializers import ProductsSerializers
 
 class ProductViewSet(ModelViewSet):
     serializer_class = ProductsSerializers
+    queryset         = Products.objects.all()
 
     def get_queryset(self):
-        return Products.objects.all()
+        return super().get_queryset()
+    

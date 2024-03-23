@@ -1,5 +1,4 @@
 from django.db import models
-from .category import Category
 
 class Products(models.Model):
     id          = models.AutoField(primary_key=True, unique= True)
@@ -7,4 +6,4 @@ class Products(models.Model):
     description = models.TextField(max_length = 500, blank =True, null = True)
     price       = models.PositiveIntegerField(null = True)
     ative       = models.BooleanField(default = True)
-    category    = models.ManyToManyField(Category, blank = True)
+    category    = models.ManyToManyField('product.Category', blank = True)
