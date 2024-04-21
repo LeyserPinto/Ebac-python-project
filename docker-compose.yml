@@ -8,6 +8,8 @@ services:
       - .:/user/src/app/
     ports:
       - 8000:8000
+    networks:
+      - web_backend
     env_file:
       -  ./env.dev
     depends_on:
@@ -20,6 +22,12 @@ services:
       - POSTGRES_USER=dev
       - POSTGRES_PASSWORD=dev
       - POSTGRES_DB=restapp_db
+    networks:
+      - web_backend  
+
+networks:
+  web_backend:
+    driver: bridge
 
 volumes:
   postgres_data:
