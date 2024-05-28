@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd
 # SECRET_KEY = os.environ.get("SECRET_KEY") 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = int(os.environ.get('DEBUG', default=0)) 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
+ALLOWED_HOSTS =  [os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" "), '.vercel.app'] 
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'order', 
     'product',
     'debug_toolbar',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
