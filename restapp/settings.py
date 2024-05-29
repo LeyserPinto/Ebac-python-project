@@ -25,7 +25,10 @@ SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd
 # SECRET_KEY = os.environ.get("SECRET_KEY") 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = int(os.environ.get('DEBUG', default=0)) 
-ALLOWED_HOSTS =  os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
+DEBUG = False
+
+# ALLOWED_HOSTS =  os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercell.app']
 
 
 # Application definition
@@ -80,18 +83,27 @@ WSGI_APPLICATION = 'restapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
+#         'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
+#         'USER': os.environ.get("SQL_USER", 'user'),
+#         'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
+#         'HOST': os.environ.get('SQL_HOST', 'localhost'),
+#         'PORT': os.environ.get('SQL_PORT', '5432'),
+        
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
-        'USER': os.environ.get("SQL_USER", 'user'),
-        'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
-        'HOST': os.environ.get('SQL_HOST', 'localhost'),
-        'PORT': os.environ.get('SQL_PORT', '5432'),
-        
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'KgmLpgfPJTvjTzJXDfAkLaxdOoOJJwLu',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '20605',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -128,6 +140,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
