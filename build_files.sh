@@ -1,7 +1,7 @@
 pip3 install -r requirements.txt 
 
 pip3 install poetry
-pip install psycopg2
+pip3 install psycopg2
 
 python3.11 manage.py collectstatic
 
