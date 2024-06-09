@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd
 DEBUG = False
 
 # ALLOWED_HOSTS =  os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercell.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', 'LeyserP.pythonanywhere.com']
 
 
 # Application definition
