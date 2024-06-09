@@ -6,7 +6,7 @@ authors = ["Leyser Pinto <59316466+LeyserPinto@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 pytest = "^8.0.1"
 djangorestframework = "^3.14.0"
 factory-boy = "^3.3.0"
