@@ -82,27 +82,27 @@ WSGI_APPLICATION = 'restapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
-#         'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
-#         'USER': os.environ.get("SQL_USER", 'user'),
-#         'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
-#         'HOST': os.environ.get('SQL_HOST', 'localhost'),
-#         'PORT': os.environ.get('SQL_PORT', '5432'),
-        
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'KgmLpgfPJTvjTzJXDfAkLaxdOoOJJwLu',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '20605',
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
+        'USER': os.environ.get("SQL_USER", 'user'),
+        'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
+        'HOST': os.environ.get('SQL_HOST', 'localhost'),
+        'PORT': os.environ.get('SQL_PORT', '5432'),
+        
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'KgmLpgfPJTvjTzJXDfAkLaxdOoOJJwLu',
+#         'HOST': 'monorail.proxy.rlwy.net',
+#         'PORT': '20605',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
